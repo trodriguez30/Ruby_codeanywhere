@@ -2,15 +2,13 @@ def isPerfect (n)
     arr = []
     sum=0
     n.times do |i|
-      if i == 0
-        next
-      end 
+      next if i == 0
       if n % i == 0 
          arr << i
       end 
     end
-    arr.length.times do |x|
-      sum += arr[x]
+    arr.each do |x|
+     sum += x
     end 
   
   puts n == sum ? "#{n} is perfect!" : "#{n} is not perfect!" 
@@ -18,6 +16,6 @@ def isPerfect (n)
 end 
  
 puts "Enter a number: " 
-n = gets.chomp.to_i 
+n = gets.to_i 
  
 isPerfect(n)
