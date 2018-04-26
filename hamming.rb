@@ -1,8 +1,8 @@
-def hamming(dna1,dna2)
-  puts "Hamming: \n#{dna1} \n#{dna2}"
+def hamming(dna1, dna2)
   cont = 0
   arr = []
     if dna1.length == dna2.length
+     puts "\nHamming: \n#{dna1} \n#{dna2}"
      x = dna1.length
      x.times do |i|
          unless dna1[i] == dna2[i]
