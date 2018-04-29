@@ -1,28 +1,11 @@
-def hamming(dna1, dna2)
-  cont = 0
-  arr = []
-    if dna1.length == dna2.length
-     puts "\nHamming: \n#{dna1} \n#{dna2}"
-     x = dna1.length
-     x.times do |i|
-         unless dna1[i] == dna2[i]
-           cont += 1
-           arr << '^'
-         else 
-           arr << ' '
-         end 
-     end
-    puts arr.join('')
-    puts "The hamming distance is #{cont}"
-  else 
-    puts 'the length of the strands has to be equals.'
-  end 
-end 
-
-puts 'Enter DNA #1:'
-dna1 = gets.chomp.upcase
-
-puts 'Enter DNA #2:'
-dna2 = gets.chomp.upcase
-
-hamming(dna1, dna2)
+# Hamming class
+class Hamming
+  def self.compute(dna1, dna2)
+    cont = 0
+    raise ArgumentError unless dna1.length == dna2.length
+    dna1.length.times do |i|
+      cont += 1 if dna1[i] != dna2[i]
+    end
+    cont
+  end
+end
