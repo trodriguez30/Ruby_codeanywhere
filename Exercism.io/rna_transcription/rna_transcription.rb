@@ -2,11 +2,11 @@
 class Complement
   def self.of_dna(dna)
     rna = []
-    rna = comparate(dna) unless /[BD-FH-SU-Z]/=~dna
+    rna = replace(dna) unless /[BD-FH-SU-Z]/=~dna
     rna.join('')
   end
 
-  def self.comparate(dna)
+  def self.replace(dna)
     rna = []
     dna.length.times do |i|
       case dna[i]
