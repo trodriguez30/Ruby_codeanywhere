@@ -2,21 +2,10 @@
 class Raindrops
   def self.convert(num)
     raindrops = ''
-    factors = factors(num)
-    raindrops += 'Pling' if factors.include? 3
-    raindrops += 'Plang' if factors.include? 5
-    raindrops += 'Plong' if factors.include? 7
+    raindrops += 'Pling' if num % 3 == 0
+    raindrops += 'Plang' if num % 5 == 0
+    raindrops += 'Plong' if num % 7 == 0
     raindrops = num.to_s if raindrops == ''
     raindrops
-  end
-
-  def self.factors(num)
-    factors = []
-    i = 1
-    until i > num
-      factors << i if (num % i).zero?
-      i += 1
-    end
-    factors
   end
 end
