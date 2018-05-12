@@ -6,21 +6,17 @@ class Squares
   end
 
   def square_of_sum
-    i = 1
     square = 0
-    until i > @num
+    (1..@num).each do |i|
       square += i
-      i += 1
     end
     square**2
   end
 
   def sum_of_squares
-    i = 1
     square = 0
-    until i > @num
+    (1..@num).each do |i|
       square += i**2
-      i += 1
     end
     square
   end
