@@ -5,21 +5,16 @@ end
 # Rna Transcription class
 class Complement
   def self.of_dna(dna)
-    rna = []
-    rna = replace(dna) unless /[BD-FH-SU-Z]/=~dna
-    rna.join('')
+    return '' if /[^GCTA]/ =~ dna
+    dna.chars.map { |i| to_rna(i) }.join
   end
 
-  def self.replace(dna)
-    rna = []
-    dna.length.times do |i|
-      case dna[i]
-      when 'G' then rna << 'C'
-      when 'C' then rna << 'G'
-      when 'T' then rna << 'A'
-      when 'A' then rna << 'U'
-      end
+  def self.to_rna(nucleotide)
+    case nucleotide
+    when 'G' then 'C'
+    when 'C' then 'G'
+    when 'T' then 'A'
+    when 'A' then 'U'
     end
-    rna
   end
 end

@@ -14,6 +14,5 @@ class Sieve
     primes.each do |i|
       primes.delete_if { |x| (x % i).zero? && (x > i) } if (i**2) < @num
     end
-    primes
   end
 end

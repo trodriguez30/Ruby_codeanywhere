@@ -13,7 +13,7 @@ class Prime
     @prime << 2
     while @prime.length < num
       x += 1
-      next if (x % 2).zero?
+      next if x.even?
       add(x)
     end
     @prime.last
